@@ -1,0 +1,128 @@
+@import "../../scss/colors";
+@import "../../scss/mainHeading";
+
+section.projects {
+  h1 {
+    @include main-heading;
+  }
+  
+  .projects-container {
+    display: grid;
+    margin: 20px;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    @media (max-width: 767px) {
+      margin: 20px 10px;
+      gap: 10px;
+      grid-template-columns: minmax(200px, 1fr);
+    }
+    .project {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 6px;
+      position: relative;
+      transition: 0.6s linear 0.2s opacity;
+      .date {
+        font-size: 13px;
+        color: $grey;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        + h4 {
+          font-weight: normal;
+          + p {
+            color: $grey;
+            margin: 10px 0;
+            font-size: 14px;
+          }
+        }
+      }
+      .team {
+        position: relative;
+        min-height: 80px;
+        span {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          transition: 0.6s z-index;
+          &:hover {
+            z-index: 999;
+          }
+          @for $i from 2 through 5 {
+            &:nth-child(#{$i}) {
+              left: #{($i - 1) * 25px};
+            }
+          }
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+          }
+        }
+      }
+      .techniques {
+        display: flex;
+        justify-content: flex-end;
+        border-top: 1px solid #eee;
+        padding-top: 15px;
+        margin-top: 15px;
+        @media (max-width: 767px) {
+          flex-wrap: wrap;
+          justify-content: center;
+          row-gap: 8px;
+        }
+        span {
+          font-size: 13px;
+          border-radius: 6px;
+          background-color: #eee;
+          padding: 3px 8px;
+          margin-left: 6px;
+          width: fit-content;
+        }
+      }
+      .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #eee;
+        margin-top: 15px;
+        padding-top: 15px;
+        @media (max-width: 767px) {
+          flex-direction: column;
+        }
+        .prog {
+          background-color: #eee;
+          height: 8px;
+          width: 260px;
+          position: relative;
+          border-radius: 6px;
+          max-width: 100%;
+          @media (max-width: 767px) {
+            margin-bottom: 15px;
+          }
+          span {
+            @each $theme,$color in $themes {
+              &.#{$theme} {
+                background-color: $color;
+              }
+            }
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            border-radius: 6px;
+            width: 0px !important;
+            transition: 0.5s width 0.2s;
+          }
+          + div {
+            font-size: 14px;
+            color: $grey;
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}

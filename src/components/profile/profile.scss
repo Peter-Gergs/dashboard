@@ -1,0 +1,233 @@
+@import "../../scss/colors";
+@import '../../scss/mainHeading';
+
+section.profile {
+  h1 {
+      @include main-heading;
+  }
+  .profile-widgits {
+    margin: 20px;
+    .overview {
+      background-color: #fff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      @media (max-width: 767px) {
+        flex-direction: column;
+      }
+      .avatar-box {
+        width: 300px;
+        border-right: 1px solid #eee;
+        padding: 20px;
+        text-align: center;
+        @media (max-width: 767px) {
+          border-right: none;
+        }
+        > img {
+          margin-bottom: 10px;
+          border-radius: 50%;
+          width: 120px;
+          height: 120px;
+        }
+        h3 {
+          user-select: none;
+        }
+        p.level-count {
+          color: $grey;
+          margin-top: 10px;
+          margin-bottom: 16px;
+        }
+        .level {
+          border-radius: 6px;
+          background-color: #eee;
+          position: relative;
+          height: 6px;
+          overflow: hidden;
+          margin: auto;
+          width: 70%;
+          span {
+            position: absolute;
+            width: 70%;
+            left: 0;
+            top: 0;
+            background-color: $blue;
+            height: 100%;
+            border-radius: 6px;
+          }
+        }
+        .rating {
+          margin: 10px 0;
+          i {
+            color: $orange;
+          }
+        }
+        p.rating-count {
+          font-size: 13px;
+          color: $grey;
+        }
+      }
+      .info-box {
+        width: 100%;
+        @media (max-width: 767px) {
+          text-align: center;
+        }
+        .box {
+          display: flex;
+          align-items: center;
+          padding: 20px;
+          flex-wrap: wrap;
+          transition: 0.3s;
+          border-bottom: 1px solid #eee;
+          @media (max-width:767px) {
+            transition: 0.6s linear 0.2s opacity;
+          }
+          &:hover {
+            background-color: #f6f6f6;
+          }
+          h4 {
+            color: $grey;
+            font-size: 15px;
+            width: 100%;
+            font-weight: normal;
+          }
+          > div {
+            font-size: 14px;
+            min-width: 220px;
+            padding: 10px 0 0;
+            @media (min-width: 576px) {
+              min-width: 300px;
+            }
+            @media (min-width: 768px) {
+              min-width: 260px;
+            }
+            @media (max-width: 767px) {
+              flex: 1;
+            }
+            span:nth-of-type(1) {
+              color: $grey;
+            }
+          }
+          .toggle-switch {
+            height: 20px;
+            @media (max-width: 767px) {
+              margin: auto;
+            }
+            .icon {
+              height: 12px;
+              width: 12px;
+              font-size: 10 px;
+            }
+          }
+          label.checkbox-label.checked {
+            .toggle-checkbox {
+              + .toggle-switch .icon {
+                left: 62px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .other-data {
+      display: flex;
+      gap: 20px;
+      @media (max-width: 767px) {
+        flex-direction: column;
+      }
+      > div {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        margin-top: 20px;
+        h2 {
+          margin-bottom: 10px;
+        }
+        p {
+          margin-bottom: 20px;
+          color: $grey;
+          font-size: 15px;
+        }
+      }
+      .skills-card {
+        flex-grow: 1;
+        ul {
+          @media (max-width: 767px) {
+            text-align: center;
+          }
+          li {
+            padding: 15px 0;
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 10px;
+            transition: 0.6s linear 0.2s opacity;
+            &:not(:last-child) {
+              border-bottom: 1px solid #eee;
+            }
+            span {
+              display: inline-block;
+              padding: 4px 10px;
+              border-radius: 6px;
+              background-color: #eee;
+              font-size: 14px;
+              &:not(:last-child) {
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+      .activities {
+        flex-grow: 2;
+        .activity {
+          display: flex;
+          align-items: center;
+          transition: 0.3s;
+          border-radius: 6px;
+          border-bottom: 1px solid #eee;
+          padding: 20px 6px;
+          transition: 0.6s linear 0.2s opacity;
+          @media (max-width: 767px) {
+            text-align: center;
+            flex-direction: column;
+          }
+          &:hover {
+            background-color: #eee;
+          }
+          img {
+            width: 64px;
+            height: 64px;
+            margin-right: 0px;
+            margin-bottom: 20px;
+            @media (min-width: 768px) {
+              margin-right: 10px;
+              margin-bottom: 0;
+            }
+          }
+          .info,
+          .date {
+            span {
+              &:first-child {
+                display: block;
+                margin-bottom: 10px;
+                @media (max-width: 767px) {
+                  margin-bottom: 5px;
+                }
+              }
+              &:last-child {
+                color: $grey;
+              }
+            }
+          }
+          .date {
+            margin-top: 15px;
+            @media (min-width: 768px) {
+              margin-top: 0;
+              text-align: right;
+              margin-left: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@import "../../scss/colors";
+header {
+  
+    background-color: #fff;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .search {
+      position: relative;
+      svg {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $grey;
+      }
+      input {
+        padding: 10px;
+        padding-left: 30px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin-left: 5px;
+        width: 160px;
+        transition: 0.3s;
+        &::placeholder {
+          transition: 0.3s;
+        }
+        &:focus {
+          width: 200px;
+          border-color: $blue;
+          &::placeholder {
+            opacity: 0;
+          }
+        }
+      }
+    }
+    .icons {
+      display: flex;
+      align-items: center;
+      user-select: none;
+      .notification {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background-color: #f00;
+          border-radius: 50%;
+          top: 3px;
+          right: 3px;
+        }
+      }
+      img {
+        width: 32px;
+        height: 32px;
+        margin-left: 15px;
+      }
+    }
+  }
+

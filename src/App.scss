@@ -1,0 +1,35 @@
+@import "./scss/colors";
+*:focus {
+  outline: none;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  user-select: none;
+}
+.page {
+  min-height: 100vh;
+  display: flex;
+  background-color: #f1f5f9;
+  text-transform: capitalize;
+  .content {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+body::-webkit-scrollbar {
+  width: 15px;
+}
+body::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: $blue;
+  &:hover {
+    background-color: $blue-alt;
+  }
+}

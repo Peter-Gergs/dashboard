@@ -1,0 +1,31 @@
+@mixin main-heading {
+  position: relative;
+  margin: 20px 20px 40px;
+  user-select: none;
+  font-size: 2em;
+  &::after,
+  &::before {
+    content: "";
+    height: 3px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    border-radius: 2px;
+  }
+  &::before {
+    background-color: #fff;
+    width: 120px;
+  }
+  &::after {
+    background-color: #000;
+    animation: headAnimation 1s infinite linear alternate;
+  }
+  @keyframes headAnimation {
+    from {
+      width: 40px;
+    }
+    to {
+      width: 120px;
+    }
+  }
+}

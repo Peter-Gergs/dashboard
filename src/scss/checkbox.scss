@@ -1,0 +1,59 @@
+@import "./colors";
+label.checkbox-label {
+  .toggle-switch {
+    background-color: #ccc;
+    width: 78px;
+    height: 32px;
+    border-radius: 16px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+    .icon {
+      background-color: #fff;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      border-radius: 50%;
+      top: 4px;
+      left: 4px;
+      color: #ddd;
+      transition: left 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .icon-svg:first-child {
+        display: none;
+      }
+      .icon-svg:last-child {
+        display: block;
+      }
+    }
+  }
+  .toggle-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-progress-appearance: none;
+  }
+  &.checked {
+    .toggle-checkbox {
+      & + .toggle-switch {
+        background-color: $blue;
+        .icon {
+          left: 50px;
+          color: $blue;
+        }
+      }
+    }
+    .toggle-switch {
+      .icon {
+        .icon-svg:first-child {
+          display: block;
+        }
+        .icon-svg:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+}

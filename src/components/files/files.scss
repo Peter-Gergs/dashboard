@@ -1,0 +1,158 @@
+@import "../../scss/colors";
+@import "../../scss/mainHeading";
+
+section.files {
+  h1 {
+    @include main-heading;
+  }
+  .files-page {
+    display: flex;
+    margin: 20px;
+    gap: 20px;
+    flex-direction: column;
+    align-items: normal;
+    @media (min-width: 768px) {
+      align-items: flex-start;
+      flex-direction: row-reverse;
+    }
+    .files-stats {
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      min-width: 260px;
+      h2 {
+        margin-bottom: 15px;
+        text-align: center;
+        user-select: none;
+      }
+      > div {
+        display: flex;
+        align-items: center;
+        border: 1px solid #eee;
+        padding: 10px;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        font-size: 13px;
+        > span {
+          width: 40px;
+          height: 40px;
+          font-size: 1.25em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 10px;
+          border-radius: 3px;
+        }
+        .info {
+          span:last-child {
+            color: $grey;
+            display: block;
+            margin-top: 5px;
+          }
+        }
+        .size {
+          color: $grey;
+          margin-left: auto;
+        }
+      }
+      .upload {
+        border: none;
+        background-color: $blue;
+        color: #fff;
+        font-size: 13px;
+        border-radius: 6px;
+        display: block;
+        width: fit-content;
+        padding: 10px 15px;
+        margin: 15px auto 0;
+        align-items: center;
+        display: flex;
+        transition: 0.4s;
+        &:hover {
+          background-color: $blue-alt;
+          span {
+            animation: go-up infinite 0.6s;
+          }
+        }
+        span {
+          display: inline-flex;
+          margin-right: 8px;
+          font-size: 1.25em;
+        }
+        @keyframes go-up {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-5px);
+          }
+        }
+      }
+      @each $theme, $color in $themes {
+        .#{$theme} {
+          color: $color;
+          background-color: rgba($color, 0.2);
+        }
+      }
+    }
+    .files-content {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      flex: 1;
+      .file {
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        transition: 0.6s linear 0.2s;
+        > span {
+          color: $grey;
+          position: absolute;
+          transition: 0.3s;
+          cursor: pointer;
+          &:hover {
+            color: $blue;
+          }
+        }
+        .icon {
+          text-align: center;
+          img {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            width: 64px;
+            height: 64px;
+            transition: 0.3s;
+          }
+        }
+        .file-name {
+          text-align: center;
+          margin-bottom: 10px;
+          font-size: 14px;
+          user-select: none;
+        }
+        p {
+          color: $grey;
+          font-size: 13px;
+        }
+        .info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 10px;
+          padding-top: 10px;
+          font-size: 13px;
+          color: $grey;
+          border-top: 1px solid #eee;
+        }
+        &:hover {
+          .icon {
+            img {
+              transform: rotate(5deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
