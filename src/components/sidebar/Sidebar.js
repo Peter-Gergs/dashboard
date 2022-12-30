@@ -13,9 +13,9 @@ import { useEffect } from "react";
 
 function Sidebar() {
   function handleTitle() {
-    document.title = document.querySelector(
-      ".sidebar > div ul .link.active span"
-    ).innerHTML;
+    document.title =
+      "React Dashboard" ||
+      document.querySelector(".sidebar > div ul .link.active span").innerHTML;
   }
   useEffect(() => {
     handleTitle();
