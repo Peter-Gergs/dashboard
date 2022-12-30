@@ -36,49 +36,49 @@ function Sidebar() {
         <h3>John Doe</h3>
         <ul>
           <li>
-            <NavLink className="link" to="/" end>
+            <NavLink className="link" to="/dashboard" end>
               <IoStatsChartSharp />
               <span>Dashboard</span>
             </NavLink>
           </li>
           <li>
-            <NavLink className="link" to="/settings">
+            <NavLink className="link" to="dashboard/settings">
               <BsGearFill />
               <span>Settings</span>
             </NavLink>
           </li>
           <li>
-            <NavLink className="link" to="/profile">
+            <NavLink className="link" to="dashboard/profile">
               <FaUserAlt />
               <span>Profile</span>
             </NavLink>
           </li>
           <li>
-            <NavLink className="link" to="/projects">
+            <NavLink className="link" to="dashboard/projects">
               <BsFillDiagram3Fill />
               <span>Projects</span>
             </NavLink>
           </li>
           <li>
-            <NavLink className="link" to="/courses">
+            <NavLink className="link" to="dashboard/courses">
               <FaGraduationCap />
               <span>Courses</span>
             </NavLink>
           </li>
           <li>
-            <NavLink className="link" to="/friends">
+            <NavLink className="link" to="dashboard/friends">
               <FaUserFriends />
               <span>Friends</span>
             </NavLink>
           </li>
           <li>
-            <NavLink className="link" to="/files">
+            <NavLink className="link" to="dashboard/files">
               <BsFillFileEarmarkFill />
               <span>Files</span>
             </NavLink>
           </li>
           <li>
-            <NavLink className="link" to="/plans">
+            <NavLink className="link" to="dashboard/plans">
               <BsFillCreditCard2FrontFill />
               <span>Plans</span>
             </NavLink>

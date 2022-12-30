@@ -18,14 +18,16 @@ function App() {
       <div className="content">
         <Header />
         <Routes>
-          <Route path="*" element={<Dashboard />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/friends" element={<Friends />} />
-          <Route path="/files" element={<Files />} />
-          <Route path="/plans" element={<Plans />} />
+          <Route path="dashboard">
+            <Route path="" element={<Dashboard />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="courses" element={<Courses />} />
+            <Route path="friends" element={<Friends />} />
+            <Route path="files" element={<Files />} />
+            <Route path="plans" element={<Plans />} />
+          </Route>
         </Routes>
       </div>
     </div>
